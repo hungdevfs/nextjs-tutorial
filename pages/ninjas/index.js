@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import styles from '../../styles/NinjaList.module.css';
 
@@ -13,9 +14,11 @@ const NinjaList = ({ data }) => {
         <h1>Ninja list</h1>
         <div className={styles.list}>
           {data.map((item) => (
-            <div key={item.id} className={`cursor-pointer ${styles.single}`}>
-              <h4>{item.name}</h4>
-            </div>
+            <Link href={`/ninjas/${item.id}`}>
+              <div key={item.id} className={`cursor-pointer ${styles.single}`}>
+                <h4>{item.name}</h4>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
