@@ -14,8 +14,8 @@ const NinjaList = ({ data }) => {
         <h1>Ninja list</h1>
         <div className={styles.list}>
           {data.map((item) => (
-            <Link href={`/ninjas/${item.id}`}>
-              <div key={item.id} className={`cursor-pointer ${styles.single}`}>
+            <Link href={`/ninjas/${item.id}`} key={item.id}>
+              <div className={`cursor-pointer ${styles.single}`}>
                 <h4>{item.name}</h4>
               </div>
             </Link>
