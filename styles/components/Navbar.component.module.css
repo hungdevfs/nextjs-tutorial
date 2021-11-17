@@ -1,0 +1,17 @@
+.container {
+  background: coral;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container > a {
+  margin: 0 8px;
+  font-weight: 600;
+}
+
+.container > a:hover {
+  opacity: 0.7;
+}

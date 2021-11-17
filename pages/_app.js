@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import FullContent from '../components/FullContent';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <FullContent>
+      <Component {...pageProps} />
+    </FullContent>
+  );
+};
 
-export default MyApp
+export default MyApp;
