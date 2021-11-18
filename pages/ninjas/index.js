@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { get } from '../../services/user.service';
+
 import styles from '../../styles/NinjaList.module.css';
 
 const NinjaList = ({ data }) => {
@@ -28,8 +30,7 @@ const NinjaList = ({ data }) => {
 
 export default NinjaList;
 
-export const getStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data = await res.json();
+export const getServerSideProps = async () => {
+  const data = await get();
   return { props: { data } };
 };
