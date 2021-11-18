@@ -8,9 +8,15 @@ export const get = async () => {
   return users;
 };
 
+export const getById = async (id) => {
+  await prisma.$connect();
+  const user = await prisma.user.findUnique({ where: { id } });
+  return user;
+};
+
 export const create = async (data) => {
   await prisma.$connect();
   await prisma.user.create({
-    data
-  })
-}
+    data,
+  });
+};
