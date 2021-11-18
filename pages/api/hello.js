@@ -1,5 +1,11 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import nextConnect from 'next-connect';
+import { getUsers } from '../../services/user.service';
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
-}
+const handler = nextConnect();
+
+handler.get(async (req, res, next) => {
+  const users = await getUsers();
+  res.json(users);
+});
+
+export default handler;
